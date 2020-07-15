@@ -6,11 +6,13 @@ import LoginPage from '../LoginPage/LoginPage';
 
 
 import userService from '../../utils/userService';
+import tokenService from '../../utils/tokenService';
 
 
 class App extends Component {
   state = {
     user: userService.getUser(),
+    meetup: []
   }
 
   handleLogout = () => {
@@ -23,17 +25,23 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({
       user: userService.getUser()
-    }, () => this.getAllPuppies());
+    }, () => this.props.history.push('/'));
   }
+  // handleLogout = () => {
+  //   userService.logout();
+  //   this.setState({ user: null });
+  // }
 
+  // handleSignupOrLogin = () => {
+  //   this.setState({user: userService.getUser()});
+  // }
  
  
 
   render() {
     return (
-      <div className="App">
+      <div>
       <header className="App-header">
-        React Puppies
         <nav>
           {userService.getUser() ?
             <>
