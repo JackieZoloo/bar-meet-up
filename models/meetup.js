@@ -34,7 +34,11 @@ const meetupSchema = new Schema({
         type: Date,
         required: true
     },
-    peopleGoing: [peopleSchema]   
+    peopleGoing: [peopleSchema],
+    time: {
+        type: String,
+        required: true
+    } 
 },{
     timestamps: true
 })
