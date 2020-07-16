@@ -9,6 +9,7 @@ require('dotenv').config();
 require('./config/database');
 
 const usersRoutes = require('./routes/users');
+// const meetupssRoutes = require('./routes/meetup');
 
 
 app.use(logger('dev'));
@@ -21,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/users', usersRoutes);
 // Load config/auth
 app.use(require('./config/auth'));
-
+// app.use('/api/meetups', meetupssRoutes );
 
 // Catch all
 app.get('/*', (req, res) => {
