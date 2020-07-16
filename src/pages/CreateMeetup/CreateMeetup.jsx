@@ -4,13 +4,12 @@ class CreateMeetup extends Component {
     state = {
         formData: {
             eventName: '',
-            place: {
-                streetAddress: '',
-                city: '',
-                state: '',
-                zipCode: ''
-            },
-            date: ''
+            streetAddress: '',
+            city: '',
+            state: '',
+            zipCode: '',
+            date: '',
+            time: ''
         }
     }
     handleChange = e => {
@@ -19,7 +18,7 @@ class CreateMeetup extends Component {
             [e.target.name]: e.target.value
         }
         this.setState({
-            formdata: formDataAsUserTypes
+            formData: formDataAsUserTypes
         })
     }
     handleSubmit = e => {
@@ -41,28 +40,28 @@ class CreateMeetup extends Component {
                  <label>Place Street Address</label>
                  <input 
                     name='streetAddress'
-                    value={this.state.formData.place.streetAddress}
+                    value={this.state.formData.streetAddress}
                     onChange={this.handleChange}
                     required
                  />
                  <label>City</label>
                  <input 
                     name='city'
-                    value={this.state.formData.place.city}
+                    value={this.state.formData.city}
                     onChange={this.handleChange}
                     required
                  />
                  <label>State</label>
                  <input 
                     name='state'
-                    value={this.state.formData.place.state}
+                    value={this.state.formData.state}
                     onChange={this.handleChange}
                     required
                  />
                  <label>Zip Code</label>
                  <input 
                     name='zipCode'
-                    value={this.state.formData.place.zipCode}
+                    value={this.state.formData.zipCode}
                     onChange={this.handleChange}
                     required
                  />
@@ -73,7 +72,14 @@ class CreateMeetup extends Component {
                     onChange={this.handleChange}
                     required
                  />
-                 <label>Event Name</label>
+                 <label>time</label>
+                 <input 
+                    name='time'
+                    value={this.state.formData.date}
+                    onChange={this.handleChange}
+                    required
+                 />
+              
                  <button type="submit">
                      Create Meetup
                  </button>

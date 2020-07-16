@@ -20,8 +20,10 @@ const placeSchema = new Schema({
     }
 })
 const peopleSchema = new Schema({
-    name: String,
-    required: true
+    name: {
+        type: String,
+        required: true
+}
 })
 
 const meetupSchema = new Schema({
