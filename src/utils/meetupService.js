@@ -1,7 +1,7 @@
 
 import tokenService from './tokenService';
 
-const BASE_URL = /*localhost:3001*/'/api/meetups';
+const BASE_URL = '/api/meetups';
 
 // index
 export function getAllMeetupsAPI() {
@@ -14,7 +14,7 @@ export function getAllMeetupsAPI() {
 }
 
 // create
-export function createMeetupAPI(puppyToCreate) {
+export function createMeetupAPI(meetupToCreate) {
     return fetch(BASE_URL, {
         method: 'POST',
         headers: {

@@ -11,6 +11,7 @@ module.exports = {
 async function index(req, res) {
     try{
         const meetups = await Meetup.find({user: req.user._id}).populate('user');
+        console.log(meetups, "this controller");
         res.status(200).json(meetups);
     }
     catch(err){

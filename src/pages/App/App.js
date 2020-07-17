@@ -5,26 +5,14 @@ import MeetupPage from '../MeetupPage/MeetupPage';
 import Create from '../CreateMeetup/CreateMeetup'
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-
-
-
+import * as meetupService from '../../utils/meetupService';
 import userService from '../../utils/userService';
-import tokenService from '../../utils/tokenService';
+
 
 class App extends Component {
   state = {
     user: userService.getUser(),
-    meetups: {
-      eventName: 'DenverCoders',
-      places: {
-        streetAddress: "1509 S Galena Way",
-        city: 'Aurora',
-        state: 'CO',
-        zipCode: 80247
-      },
-      peopleGoing: 5,
-      date: '07/22/2020'
-    }
+    meetups: []
   }
 
   handleLogout = () => {
@@ -39,17 +27,31 @@ class App extends Component {
       user: userService.getUser()
     }, () => this.props.history.push('/'));
   }
-  // handleLogout = () => {
-  //   userService.logout();
-  //   this.setState({ user: null });
-  // }
-
-  // handleSignupOrLogin = () => {
-  //   this.setState({user: userService.getUser()});
-  // }
+  handleAddMeetup = async newMeetupData => {
+    await meetupService.createMeetupAPI(newMeetupData);
+    this.getAllMeetups();
+  }
+  getAllMeetups = async () => {
+    const meetups = await meetupService.getAllMeetupsAPI();
+    console.log(meetups, 'this is meetupssss');
+    this.setState({
+      meetups: meetups
+    }, () => this.props.history.push('/'));
+  }
+  componentDidMount() {
+    this.getAllMeetups();
+  }
+  handleDeleteMeetup = async idOfMeetupToDelete => {
+    await meetupService.deleteMeetupAPI(idOfMeetupToDelete);
+    this.setState(state => ({
+      meetups: state.meetups.filter(meetup => meetup._id !== idOfMeetupToDelete)
+    }), () => this.props.history.push('/'));
+  }
+  handleUpdateMeetup = async updatedMeetupData => {
+    await meetupService.updateMeetupAPI(updatedMeetupData);
+    this.getAllMeetups();
+  }
  
- 
-
   render() {
     return (
       <div>
@@ -66,9 +68,6 @@ class App extends Component {
             :
             <>
               <NavLink exact to='/signup'>SIGNUP</NavLink>
-              &nbsp;&nbsp;&nbsp;
-             
-              &nbsp;&nbsp;&nbsp;
           </>
           }
         </nav>
@@ -79,11 +78,13 @@ class App extends Component {
             <SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
           } />
           <Route exact path='/create' render={({ history }) =>
-            <Create history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
+            <Create history={history} handleSignupOrLogin={this.handleSignupOrLogin} 
+             handleAddMeetup={this.handleAddMeetup}
+            />
           } />
          <Route exact path='/' render={({ history }) =>
               userService.getUser() ?
-                <MeetupPage />
+                <MeetupPage meetupsFromParent={this.state.meetups} handleDeleteMeetup={this.handleDeleteMeetup} />
                 :
                 <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />

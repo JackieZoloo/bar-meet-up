@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const meetupsCtrl = require('../controllers/meetup');
 
-router.get(/*/api/puppies*/'/',  meetupsCtrl.index);
-router.post(/*/api/puppies*/'/', checkAuth, meetupsCtrl.create);
-router.put(/*/api/puppies*/'/:id', checkAuth, meetupsCtrl.update);
-router.delete(/*/api/puppies*/'/:id', checkAuth, meetupsCtrl.delete);
+router.get('/',  meetupsCtrl.index);
+router.post('/', checkAuth, meetupsCtrl.create);
+router.put('/:id', checkAuth, meetupsCtrl.update);
+router.delete('/:id', checkAuth, meetupsCtrl.delete);
 
 function checkAuth(req, res, next) {
     if(req.user) return next();

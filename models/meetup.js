@@ -1,7 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const placeSchema = new Schema({
+
+const peopleSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    }, 
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
+})
+
+const meetupSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    eventName: {
+        type: String,
+        required: true
+    },
     streetAddress: {
         type: String,
         required: true
@@ -17,21 +37,7 @@ const placeSchema = new Schema({
     zipCode: {
         type: Number,
         required: true
-    }
-})
-const peopleSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-}
-})
-
-const meetupSchema = new Schema({
-    eventName: {
-        type: String,
-        required: true
     },
-    place: [placeSchema],
     date: {
         type: Date,
         required: true

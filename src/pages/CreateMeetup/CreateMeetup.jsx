@@ -75,7 +75,7 @@ class CreateMeetup extends Component {
                  <label>time</label>
                  <input 
                     name='time'
-                    value={this.state.formData.date}
+                    value={this.state.formData.time}
                     onChange={this.handleChange}
                     required
                  />

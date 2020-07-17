@@ -9,10 +9,11 @@ require('dotenv').config();
 require('./config/database');
 
 const usersRoutes = require('./routes/users');
-const puppiesRoutes = require('./routes/meetups');
+const meetupsRoutes = require('./routes/meetups');
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(express.urlencoded({extended: true})); 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -21,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/users', usersRoutes);
 // Load config/auth
 app.use(require('./config/auth'));
-app.use('/api/meetups', puppiesRoutes);
+app.use('/api/meetups', meetupsRoutes);
 
 // Catch all
 app.get('/*', (req, res) => {
