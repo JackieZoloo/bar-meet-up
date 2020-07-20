@@ -7,8 +7,7 @@
     margin: 0 auto;
     color: white;
     text-align: center;
-    text-decoration: none;
-    color: white;
+  
 }
 .Signup-page header {
     text-align: center;
@@ -26,5 +25,12 @@
    border-radius: 10px;
 }
 .Signup-page form button:hover {
+    cursor: pointer;
+}
+.SignupForm-link {
+    text-decoration: none;
+    color: white;
+}
+.SignupForm-link:hover {
     cursor: pointer;
 }

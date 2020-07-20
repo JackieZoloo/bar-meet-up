@@ -58,6 +58,7 @@ class App extends Component {
       <div >
       <header className="App-header">
         <nav>
+          <h1>Bar Meetup</h1>
           {userService.getUser() ?
             <>
               {userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}
@@ -68,7 +69,7 @@ class App extends Component {
             </>
             :
             <>
-              <NavLink exact to='/signup' className="App-signup">SIGNUP</NavLink>
+              
           </>
           }
         </nav>

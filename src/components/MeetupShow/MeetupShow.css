@@ -1,0 +1,15 @@
+.MeetupShow-container {
+    color: white;
+    border: white 2px solid;
+    width: 340px;
+    margin: 20px;
+    padding: 20px;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 30px;
+}
+.buttons button {
+    margin: 10px;
+}

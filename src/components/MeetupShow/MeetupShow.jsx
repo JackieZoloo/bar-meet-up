@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './MeetupShow.css';
 
 function MeetupShow({ meetup , handleDeleteMeetup}) {
     // state = {
@@ -21,8 +22,8 @@ function MeetupShow({ meetup , handleDeleteMeetup}) {
     //     this.props.handleAddMeetup(this.state.formData);
     // }
     return (
-        <div>
-            <h1>MeetupShow</h1>
+        <div className="MeetupShow-container">
+            <h1>Do you wnat to join ?</h1>
             <h5>{meetup.eventName}</h5>
             <h5>{meetup.streetAddress}</h5>
             <h5>{meetup.city}</h5>
@@ -30,15 +31,15 @@ function MeetupShow({ meetup , handleDeleteMeetup}) {
             <h5>{meetup.zipCode}</h5>
             <h5>{meetup.date}</h5>
             <h5>{meetup.time}</h5>
-            <Link  to={{ pathname: '/edit', state: {clickedOnMeetup: meetup}  }}>EDIT</Link>
-            <button     
-              onClick={() => handleDeleteMeetup(meetup._id)}
-                >
-                DELETE
-            </button>
-            <button >
-                going
-            </button>
+            <div className="buttons">
+            <button > <span>2 </span>JOINED </button>
+               <button><Link  to={{ pathname: '/edit', state: {clickedOnMeetup: meetup}  }}>EDIT</Link></button> 
+                <button     
+                onClick={() => handleDeleteMeetup(meetup._id)}
+                    >
+                    DELETE
+                </button>
+            </div>
         </div>
 
     )

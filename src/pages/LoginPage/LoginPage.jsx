@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import userService from '../../utils/userService';
 import './LoginPage.css'
 
@@ -39,7 +39,8 @@ class LoginPage extends Component {
               <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
               <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
               <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-             
+              <NavLink exact to='/signup' className="App-signup">SIGNUP</NavLink>
+              
             
         </form>
       </div>

@@ -20,3 +20,8 @@
   margin-top: 400px;
   text-decoration: none;
 }
+.App-header h1 {
+  margin: 0 0 0 20px;
+  font-size: 50px;
+  
+}
