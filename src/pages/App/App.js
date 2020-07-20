@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch, NavLink, Redirect} from 'react-router-dom';
 import './App.css';
 import MeetupPage from '../MeetupPage/MeetupPage';
-import Create from '../CreateMeetup/CreateMeetup'
+import Create from '../CreateMeetup/CreateMeetup';
+import EditMeetupPage from '../EditMeetupPage/EditMeetupPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import * as meetupService from '../../utils/meetupService';
@@ -88,6 +89,13 @@ class App extends Component {
                 :
                 <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />
+             <Route exact path='/edit' render={({ history, location }) =>
+              userService.getUser() ?
+                <EditMeetupPage handleUpdateMeetup={this.handleUpdateMeeetup} location={location} meetupFromParent={this.state.meetups} />
+                :
+                <Redirect to='/login' />
+            } />
+            
         </Switch>
       </main>
     </div>
