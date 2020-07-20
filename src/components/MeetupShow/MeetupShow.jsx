@@ -24,13 +24,13 @@ function MeetupShow({ meetup , handleDeleteMeetup}) {
     return (
         <div className="MeetupShow-container">
             <h1>Do you wnat to join ?</h1>
-            <h5>{meetup.eventName}</h5>
-            <h5>{meetup.streetAddress}</h5>
-            <h5>{meetup.city}</h5>
-            <h5>{meetup.state}</h5>
-            <h5>{meetup.zipCode}</h5>
-            <h5>{meetup.date}</h5>
-            <h5>{meetup.time}</h5>
+            <h2>{meetup.eventName}</h2>
+            <span>{meetup.streetAddress} </span>
+            <span>{meetup.city} </span>
+            <span className="zipCode">{meetup.state } </span>
+            <span >{meetup.zipCode} </span>
+            <span>on {meetup.date} </span>
+            <span>at {meetup.time}</span>
             <div className="buttons">
             <button > <span>2 </span>JOINED </button>
                <button><Link  to={{ pathname: '/edit', state: {clickedOnMeetup: meetup}  }}>EDIT</Link></button> 

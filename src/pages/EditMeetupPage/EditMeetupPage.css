@@ -1,0 +1,13 @@
+.EditMeetupPage-container {
+    color: white;
+    border: white 2px solid;
+    width: 340px;
+    margin: 20px;
+    padding: 20px;
+    background-color: black;
+    opacity: 0.7;
+    margin: 0 auto;
+}
+.EditMeetupPage-container div {
+  
+}

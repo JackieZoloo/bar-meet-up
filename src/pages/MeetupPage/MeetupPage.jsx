@@ -1,10 +1,10 @@
 import React from 'react';
 import MeetupShow from '../../components/MeetupShow/MeetupShow';
+import './MeetupPage.css';
 
 function MeetupPage({ meetupsFromParent, handleDeleteMeetup }) {
     return (
-        <>
-          <h1>meetup page</h1>
+        <div className="MeetupPage-container">
           {meetupsFromParent.map(meetup =>
        
              <MeetupShow 
@@ -14,7 +14,7 @@ function MeetupPage({ meetupsFromParent, handleDeleteMeetup }) {
                 />
        
             )}
-        </>
+        </div>
     )
 }
 export default MeetupPage;

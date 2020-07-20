@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './EditMeetupPage.css';
 
 class EditMeetupPage extends Component {
     state = {
@@ -22,7 +23,7 @@ class EditMeetupPage extends Component {
 
     render() {
         return (
-            <>
+            <div className="EditMeetupPage-container">
                 <h1>Edit Meetup</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -97,7 +98,7 @@ class EditMeetupPage extends Component {
           </button>&nbsp;&nbsp;
           <Link to='/'>CANCEL</Link>
                 </form>
-            </>
+            </div>
         );
     }
 }
