@@ -1,0 +1,30 @@
+.Signup-page {
+    border: 2px solid white;
+    background-color: rgb(102, 50, 16);
+    opacity: 0.8;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.Signup-page header {
+    text-align: center;
+    margin: 10px
+}
+.Signup-page form input {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+.Signup-page form button {
+   background-color: white;
+   width: 80px;
+   height: 30px;
+   border-radius: 10px;
+}
+.Signup-page form button:hover {
+    cursor: pointer;
+}

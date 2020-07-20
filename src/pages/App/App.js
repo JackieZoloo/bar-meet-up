@@ -55,8 +55,8 @@ class App extends Component {
  
   render() {
     return (
-      <div>
-      <header>
+      <div >
+      <header className="App-header">
         <nav>
           {userService.getUser() ?
             <>
@@ -68,7 +68,7 @@ class App extends Component {
             </>
             :
             <>
-              <NavLink exact to='/signup'>SIGNUP</NavLink>
+              <NavLink exact to='/signup' className="App-signup">SIGNUP</NavLink>
           </>
           }
         </nav>
@@ -85,13 +85,13 @@ class App extends Component {
           } />
          <Route exact path='/' render={({ history }) =>
               userService.getUser() ?
-                <MeetupPage meetupsFromParent={this.state.meetups} handleDeleteMeetup={this.handleDeleteMeetup} />
+                <MeetupPage history={history} handleAddMeetup={this.handleAddMeetup} meetupsFromParent={this.state.meetups} handleDeleteMeetup={this.handleDeleteMeetup} />
                 :
                 <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />
              <Route exact path='/edit' render={({ history, location }) =>
               userService.getUser() ?
-                <EditMeetupPage handleUpdateMeetup={this.handleUpdateMeeetup} location={location} meetupFromParent={this.state.meetups} />
+                <EditMeetupPage handleUpdateMeetup={this.handleUpdateMeetup} location={location} meetupFromParent={this.state.meetups} />
                 :
                 <Redirect to='/login' />
             } />

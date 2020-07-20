@@ -84,7 +84,6 @@ class CreateMeetup extends Component {
                      Create Meetup
                  </button>
              </form>
-
            </>
         )
     }

@@ -2,6 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function MeetupShow({ meetup , handleDeleteMeetup}) {
+    // state = {
+    //     formData: {
+    //         people: ''
+    //     }
+    // }
+    // handleChange = e => {
+    //     const formDataAsUserTypes = {
+    //         ...this.state.formData,
+    //         [e.target.name]: e.target.value
+    //     }
+    //     this.setState({
+    //         formData: formDataAsUserTypes
+    //     })
+    // }
+    // handleSubmit = e => {
+    //     e.preventDefault();
+    //     this.props.handleAddMeetup(this.state.formData);
+    // }
     return (
         <div>
             <h1>MeetupShow</h1>

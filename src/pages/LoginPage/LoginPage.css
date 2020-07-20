@@ -1,0 +1,28 @@
+.Login-page {
+    border: 2px solid white;
+    background-color: rgb(102, 50, 16);
+    opacity: 0.8;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+.Login-page header {
+    text-align: center;
+    margin: 10px
+}
+.Login-page form input {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+.Login-page form button {
+   background-color: white;
+   width: 80px;
+   height: 30px;
+   border-radius: 10px;
+}
+.Login-page form button:hover {
+    cursor: pointer;
+}

@@ -93,7 +93,7 @@ class EditMeetupPage extends Component {
                         type="submit"
                         className="btn btn-xs"
                     >
-                        SAVE PUPPY
+                        SAVE Meetup
           </button>&nbsp;&nbsp;
           <Link to='/'>CANCEL</Link>
                 </form>
