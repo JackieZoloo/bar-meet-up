@@ -39,10 +39,9 @@ class LoginPage extends Component {
               <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
               <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
               <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <NavLink exact to='/signup' className="App-signup">SIGNUP</NavLink>
-              
-            
         </form>
+        <h1>OR</h1>
+        <NavLink exact to='/signup'className="signup">SIGNUP</NavLink>
       </div>
     );
   }

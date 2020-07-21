@@ -24,7 +24,17 @@ export function createMeetupAPI(meetupToCreate) {
         body: JSON.stringify(meetupToCreate)
     }).then(newMeetup => newMeetup.json());
 }
-
+// Addpeople
+export function addPeopleApi(meetupId) {
+    return fetch(`${BASE_URL}/${meetupId}`, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${tokenService.getTokenFromLocalStorage()}`
+        },
+        // body: JSON.stringify(meetupId)
+    }).then(updatedMeetup => updatedMeetup.json());
+}
 
 // delete
 export function deleteMeetupAPI(meetupIdToDelete) {

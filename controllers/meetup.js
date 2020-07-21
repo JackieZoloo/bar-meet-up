@@ -1,10 +1,12 @@
 const Meetup = require('../models/meetup');
+const auth = require('../config/auth');
 
 module.exports = {
     index,
     create,
     update,
     delete: deleteOne,
+    addPeople
 };
 
 // index
@@ -41,7 +43,19 @@ async function update(req, res) {
         res.status(500).json(err);
     }
 }
-
+//update people
+async function addPeople(req, res) {
+    try{
+        const foundMeetup = await Meetup.findById(req.params.id)
+        foundMeetup.peopleGoing.push(req.user)
+        await foundMeetup.save()
+        console.log(foundMeetup);
+        res.status(200).json(foundMeetup);
+    }
+    catch(err) {
+        res.status(500).json(err);
+    }
+}
 // delete
 async function deleteOne(req, res) {
     try{

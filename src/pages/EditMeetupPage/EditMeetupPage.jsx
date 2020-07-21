@@ -37,6 +37,16 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
+                        <label>Meetup Description </label>
+                        <input
+                            className="form-control"
+                            name="eventName"
+                            value={this.state.formData.description}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
                         <label>Meetup Street Address</label>
                         <input
                             className="form-control"
@@ -55,7 +65,7 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Meetup Street State</label>
+                        <label>Meetup State</label>
                         <input
                             className="form-control"
                             name="streetAddress"
@@ -64,7 +74,7 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Meetup Street State</label>
+                        <label>Meetup Date</label>
                         <input
                             className="form-control"
                             name="streetAddress"
@@ -73,7 +83,7 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Meetup Street State</label>
+                        <label>Meetup ZipCode</label>
                         <input
                             className="form-control"
                             name="streetAddress"
@@ -82,7 +92,7 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Meetup Street State</label>
+                        <label>Meetup Time</label>
                         <input
                             className="form-control"
                             name="streetAddress"
@@ -96,7 +106,7 @@ class EditMeetupPage extends Component {
                     >
                         SAVE Meetup
           </button>&nbsp;&nbsp;
-          <Link to='/'>CANCEL</Link>
+          <Link className="Edit-cancel" to='/'>CANCEL</Link>
                 </form>
             </div>
         );

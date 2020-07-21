@@ -8,6 +8,10 @@
     opacity: 0.7;
     margin: 0 auto;
 }
-.EditMeetupPage-container div {
-  
+.EditMeetupPage-container input {
+    margin-right: auto;
+}
+.Edit-cancel {
+    color: white;
+    text-decoration: none;
 }

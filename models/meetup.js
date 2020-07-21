@@ -2,23 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const peopleSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    }, 
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }
-})
-
 const meetupSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
     eventName: {
+        type: String,
+        required: true
+    },
+    description: {
         type: String,
         required: true
     },
@@ -42,7 +35,10 @@ const meetupSchema = new Schema({
         type: Date,
         required: true
     },
-    peopleGoing: [peopleSchema],
+    peopleGoing: [ {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
     time: {
         type: String,
         required: true

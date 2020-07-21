@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './CreateMeetup.css';
 
 class CreateMeetup extends Component {
     state = {
         formData: {
             eventName: '',
+            description: '',
             streetAddress: '',
             city: '',
             state: '',
@@ -27,13 +30,20 @@ class CreateMeetup extends Component {
     }
     render() {
         return(
-           <>
+           <div className="CreateMeetup-container">
              <h1>Create Meetup</h1>
              <form onSubmit={this.handleSubmit}>
                  <label>Event Name</label>
                  <input 
                     name='eventName'
                     value={this.state.formData.eventName}
+                    onChange={this.handleChange}
+                    required
+                 />
+                 <label>Description</label>
+                 <input 
+                    name='description'
+                    value={this.state.formData.description}
                     onChange={this.handleChange}
                     required
                  />
@@ -83,8 +93,9 @@ class CreateMeetup extends Component {
                  <button type="submit">
                      Create Meetup
                  </button>
+                 <Link className="CreateMeetup-link"to='/'>CANCEL</Link>
              </form>
-           </>
+           </div>
         )
     }
 }

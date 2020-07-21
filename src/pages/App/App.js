@@ -32,6 +32,11 @@ class App extends Component {
     await meetupService.createMeetupAPI(newMeetupData);
     this.getAllMeetups();
   }
+  // Add people going
+  handleAddPeople = async meetupId => {
+    await meetupService.addPeopleApi(meetupId);
+    this.getAllMeetups();
+  }
   getAllMeetups = async () => {
     const meetups = await meetupService.getAllMeetupsAPI();
     console.log(meetups, 'this is meetupssss');
@@ -63,8 +68,8 @@ class App extends Component {
             <>
               {userService.getUser().name ? `WELCOME, ${userService.getUser().name.toUpperCase()}` : ''}
               &nbsp;&nbsp;&nbsp;
-              <NavLink exact to='/logout' onClick={this.handleLogout}>LOGOUT</NavLink>
-              <NavLink exact to='/create' >Create meetup</NavLink>
+              <button><NavLink exact to='/create' className="link">CREATE MEETUP</NavLink></button>
+              <NavLink exact to='/logout' className="link" onClick={this.handleLogout}>LOGOUT</NavLink>
               &nbsp;&nbsp;&nbsp;
             </>
             :
@@ -86,7 +91,7 @@ class App extends Component {
           } />
          <Route exact path='/' render={({ history }) =>
               userService.getUser() ?
-                <MeetupPage history={history} handleAddMeetup={this.handleAddMeetup} meetupsFromParent={this.state.meetups} handleDeleteMeetup={this.handleDeleteMeetup} />
+                <MeetupPage history={history} handleAddMeetup={this.handleAddMeetup} meetupsFromParent={this.state.meetups} handleDeleteMeetup={this.handleDeleteMeetup} handleAddPeople={this.handleAddPeople} />
                 :
                 <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
             } />
