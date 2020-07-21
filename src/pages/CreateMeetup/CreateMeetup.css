@@ -2,7 +2,7 @@
     color: white;
     border: white 2px solid;
     width: 340px;
-    height: 500px;
+    height: 700px;
     margin: 20px;
     padding: 20px;
     background-color: black;
@@ -19,4 +19,7 @@
 .CreateMeetup-link {
     text-decoration: none;
     color: white;
+}
+.create-button {
+    margin-top: 20px;
 }

@@ -7,6 +7,7 @@ class CreateMeetup extends Component {
         formData: {
             eventName: '',
             description: '',
+            barName: '',
             streetAddress: '',
             city: '',
             state: '',
@@ -44,6 +45,13 @@ class CreateMeetup extends Component {
                  <input 
                     name='description'
                     value={this.state.formData.description}
+                    onChange={this.handleChange}
+                    required
+                 />
+                  <label>Bar Name</label>
+                 <input 
+                    name='barName'
+                    value={this.state.formData.barName}
                     onChange={this.handleChange}
                     required
                  />
@@ -89,11 +97,12 @@ class CreateMeetup extends Component {
                     onChange={this.handleChange}
                     required
                  />
-              
+                <div  className="create-button">
                  <button type="submit">
                      Create Meetup
                  </button>
                  <Link className="CreateMeetup-link"to='/'>CANCEL</Link>
+                 </div>
              </form>
            </div>
         )

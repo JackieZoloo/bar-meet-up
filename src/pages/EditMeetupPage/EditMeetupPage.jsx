@@ -47,6 +47,16 @@ class EditMeetupPage extends Component {
                         />
                     </div>
                     <div className="form-group">
+                        <label>Bar Name </label>
+                        <input
+                            className="form-control"
+                            name="barName"
+                            value={this.state.formData.barName}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
                         <label>Meetup Street Address</label>
                         <input
                             className="form-control"

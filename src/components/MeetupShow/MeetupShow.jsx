@@ -12,6 +12,7 @@ function MeetupShow({ meetup , handleDeleteMeetup, handleAddPeople}) {
             <h1>Do you want to join ?</h1>
             <h2>{meetup.eventName}</h2>
             <h2>{meetup.description}</h2>
+            <h2>{meetup.barName}</h2>
             <span>{meetup.streetAddress} </span>
             <span>{meetup.city} </span>
             <span className="zipCode">{meetup.state } </span>

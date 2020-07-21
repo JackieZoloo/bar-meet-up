@@ -11,6 +11,10 @@ const meetupSchema = new Schema({
         type: String,
         required: true
     },
+    barName: {
+        type: String,
+        required: true
+    },
     description: {
         type: String,
         required: true
